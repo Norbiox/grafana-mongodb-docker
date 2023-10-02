@@ -1,4 +1,8 @@
 version: "3"
+
+volumes:
+  data: {}
+
 services:
   prod:
     build:
@@ -6,7 +10,7 @@ services:
       dockerfile: Dockerfile
     restart: always
     volumes:
-     - ./data:/var/lib/grafana
+     - data:/var/lib/grafana
      - /var/lib/grafana/plugins
     ports:
      - 3000:3000
