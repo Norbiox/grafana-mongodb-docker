@@ -24,4 +24,6 @@ RUN apk update \
     && chmod +x /custom-run.sh \
     && sed -i 's/;allow_loading_unsigned_plugins =.*/allow_loading_unsigned_plugins = grafana-mongodb-opensource-datasource/g' $GF_PATHS_CONFIG
 
+USER 472
+
 ENTRYPOINT ["/custom-run.sh"]
